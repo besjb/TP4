@@ -43,4 +43,12 @@ public class OffreEnchere {
     public void setPrixMax(double prixMax) {
         this.prixMax = prixMax;
     }
+
+    public LocalTime getHeure() {
+        return heure;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
 }
