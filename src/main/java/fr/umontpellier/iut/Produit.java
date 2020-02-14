@@ -15,14 +15,14 @@ public class Produit {
     private LocalDate dateFinEnchere;
     private LocalTime heureFin;
     private ArrayList<OffreEnchere> listeOffreP;
+    private OffreEnchere enchereGagnante;
 
     private static double pasEnchere; //le pas d'enchère minimal commun à tous les produits vendus.
 
-    public Produit(int numero, String description, double prixCourant, double coutParticipation) {
+    public Produit(int numero, String description, double prixCourant) {
         this.numero = numero;
         this.description = description;
         this.prixCourant = prixCourant;
-        this.coutParticipation = coutParticipation;
         enCours = false;
         listeOffreP = new ArrayList<>();
     }
@@ -60,8 +60,15 @@ public class Produit {
     }
 
     public void ajouterOffre(OffreEnchere offre){
-        if(!enCours || offre.getPrixCourant()-prixCourant >= pasEnchere){
+        if(enchereGagnante == null || (offre.getPrixCourant() >= prixCourant + pasEnchere && offre.getPrixMax() > enchereGagnante.getPrixMax())){
+            offre.setEstGagnant(true);
+            enchereGagnante = offre;
+            prixCourant = enchereGagnante.getPrixCourant();
             listeOffreP.add(offre);
         }
+    }
+
+    public OffreEnchere getGagnant(){
+        return enchereGagnante;
     }
 }

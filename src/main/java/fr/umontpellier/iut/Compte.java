@@ -36,4 +36,8 @@ public class Compte {
         listeOffre.add(newOffre);
         return newOffre;
     }
+
+    public String getPseudo() {
+        return pseudo;
+    }
 }

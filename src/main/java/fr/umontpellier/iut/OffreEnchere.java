@@ -9,6 +9,7 @@ public class OffreEnchere {
     private LocalTime heure;
     private double prixCourant;
     private double prixMax;
+    private boolean estGagnant;
 
     public OffreEnchere(Produit produit,double prixCourant, double prixMax) {
         this.prixCourant = prixCourant;
@@ -50,5 +51,9 @@ public class OffreEnchere {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public void setEstGagnant(boolean estGagnant) {
+        this.estGagnant = estGagnant;
     }
 }
