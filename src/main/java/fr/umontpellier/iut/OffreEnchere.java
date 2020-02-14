@@ -7,10 +7,10 @@ public class OffreEnchere {
     private Produit produit;
     private LocalDate date;
     private LocalTime heure;
-    private int prixCourant;
-    private int prixMax;
+    private double prixCourant;
+    private double prixMax;
 
-    public OffreEnchere(Produit produit,int prixCourant, int prixMax) {
+    public OffreEnchere(Produit produit,double prixCourant, double prixMax) {
         this.prixCourant = prixCourant;
         this.prixMax = prixMax;
         heure = LocalTime.now();
@@ -28,19 +28,19 @@ public class OffreEnchere {
                 '}';
     }
 
-    public int getPrixCourant() {
+    public double getPrixCourant() {
         return prixCourant;
     }
 
-    public int getPrixMax() {
+    public double getPrixMax() {
         return prixMax;
     }
 
-    public void setPrixCourant(int prixCourant) {
+    public void setPrixCourant(double prixCourant) {
         this.prixCourant = prixCourant;
     }
 
-    public void setPrixMax(int prixMax) {
+    public void setPrixMax(double prixMax) {
         this.prixMax = prixMax;
     }
 }

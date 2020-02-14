@@ -6,10 +6,10 @@ public class Compte {
     private String pseudo;
     private String email;
     private String adresse;
-    private int solde;
+    private double solde;
     private ArrayList<OffreEnchere> listeOffre;
 
-    public Compte(String pseudo, String email, String adresse, int solde) {
+    public Compte(String pseudo, String email, String adresse, double solde) {
         this.pseudo = pseudo;
         this.email = email;
         this.adresse = adresse;
@@ -17,7 +17,7 @@ public class Compte {
         listeOffre = new ArrayList<>();
     }
 
-    public void crediter(int somme){
+    public void crediter(double somme){
         solde += somme;
     }
 
@@ -31,8 +31,9 @@ public class Compte {
                 '}';
     }
 
-    public void creerOffre(Produit p, int prixCourant, int prixMax){
-        OffreEnchere newOffre = new OffreEnchere(prixCourant,prixMax);
+    public OffreEnchere creerOffre(Produit p, double prixCourant, double prixMax){
+        OffreEnchere newOffre = new OffreEnchere(p,prixCourant,prixMax);
         listeOffre.add(newOffre);
+        return newOffre;
     }
 }
