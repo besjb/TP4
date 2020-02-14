@@ -18,7 +18,8 @@ public class IBaille {
         compte2.crediter(2500);
         compte3.crediter(1500);
 
-        banane.demarrerEnchere(1);
+        banane.demarrerEnchere(10);
+        banane.setPasEnchere(1);
 
         System.out.println(banane);
 

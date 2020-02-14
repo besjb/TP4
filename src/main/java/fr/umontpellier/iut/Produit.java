@@ -60,11 +60,18 @@ public class Produit {
     }
 
     public void ajouterOffre(OffreEnchere offre){
-        if(enchereGagnante == null || (offre.getPrixCourant() >= prixCourant + pasEnchere && offre.getPrixMax() > enchereGagnante.getPrixMax())){
+        if(enchereGagnante == null && offre.getPrixCourant() >= prixCourant + pasEnchere){
             offre.setEstGagnant(true);
             enchereGagnante = offre;
             prixCourant = enchereGagnante.getPrixCourant();
             listeOffreP.add(offre);
+        }else if(offre.getPrixCourant() >= prixCourant + pasEnchere && offre.getPrixMax() > enchereGagnante.getPrixMax()){
+            prixCourant = enchereGagnante.getPrixMax() + pasEnchere;
+            offre.setEstGagnant(true);
+            enchereGagnante = offre;
+            listeOffreP.add(offre);
+        }else{
+            System.out.println("Prix insuffisant !");
         }
     }
 
