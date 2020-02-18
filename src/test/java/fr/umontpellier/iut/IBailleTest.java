@@ -34,11 +34,21 @@ class IBailleTest {
         assertEquals(c2.getListeOffre(0),p.getGagnant());
     }
 
+    //@Disabled
     @Test
     public void test_gagnant_c2_avec_3_participants() {
         p.ajouterOffre(c1.creerOffre(p,12,100));
         p.ajouterOffre(c2.creerOffre(p,15,200));
         p.ajouterOffre(c3.creerOffre(p,25,140));
         assertEquals(c2.getListeOffre(0),p.getGagnant());
+    }
+
+    //@Disabled
+    @Test
+    public void test_prixCourant_egale_141() {
+        p.ajouterOffre(c1.creerOffre(p,12,100));
+        p.ajouterOffre(c2.creerOffre(p,15,200));
+        p.ajouterOffre(c3.creerOffre(p,25,140));
+        assertEquals(141,p.getPrixCourant(),0.01);
     }
 }
