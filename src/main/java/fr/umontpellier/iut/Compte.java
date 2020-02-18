@@ -31,8 +31,8 @@ public class Compte {
                 '}';
     }
 
-    public OffreEnchere creerOffre(Produit p, double prixCourant, double prixMax){
-        OffreEnchere newOffre = new OffreEnchere(p,prixCourant,prixMax);
+    public OffreEnchere creerOffre(Produit p, double prixCourant, double prixMax, String nom){
+        OffreEnchere newOffre = new OffreEnchere(p,prixCourant,prixMax,nom);
         listeOffre.add(newOffre);
         return newOffre;
     }
