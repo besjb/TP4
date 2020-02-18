@@ -12,6 +12,7 @@ public class OffreEnchere {
     private boolean estGagnant;
 
     public OffreEnchere(Produit produit,double prixCourant, double prixMax) {
+        this.produit = produit;
         this.prixCourant = prixCourant;
         this.prixMax = prixMax;
         heure = LocalTime.now();
