@@ -40,4 +40,8 @@ public class Compte {
     public String getPseudo() {
         return pseudo;
     }
+
+    public OffreEnchere getListeOffre(int index) {
+        return listeOffre.get(index);
+    }
 }
