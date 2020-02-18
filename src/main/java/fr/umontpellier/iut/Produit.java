@@ -70,6 +70,10 @@ public class Produit {
             offre.setEstGagnant(true);
             enchereGagnante = offre;
             listeOffreP.add(offre);
+        }else if(offre.getPrixMax() <= enchereGagnante.getPrixMax() && offre.getPrixMax() >= prixCourant + pasEnchere) {
+            prixCourant = offre.getPrixMax() + pasEnchere;
+            listeOffreP.add(offre);
+            System.out.println("Prix maximum insuffisant !");
         }else{
             System.out.println("Prix insuffisant !");
         }
