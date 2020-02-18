@@ -78,4 +78,8 @@ public class Produit {
     public OffreEnchere getGagnant(){
         return enchereGagnante;
     }
+
+    public double getPrixCourant() {
+        return prixCourant;
+    }
 }
