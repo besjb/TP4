@@ -10,19 +10,22 @@ public class OffreEnchere {
     private double prixCourant;
     private double prixMax;
     private boolean estGagnant;
+    private String nomUtilisateur;
 
-    public OffreEnchere(Produit produit,double prixCourant, double prixMax) {
+    public OffreEnchere(Produit produit,double prixCourant, double prixMax, String nom) {
         this.produit = produit;
         this.prixCourant = prixCourant;
         this.prixMax = prixMax;
         heure = LocalTime.now();
         date = LocalDate.now();
+        nomUtilisateur = nom;
     }
 
     @Override
     public String toString() {
         return "OffreEnchere{" +
-                "produit=" + produit +
+                "Nom Utilisateur =" + nomUtilisateur +
+                ", produit=" + produit +
                 ", date=" + date +
                 ", heure=" + heure +
                 ", prixCourant=" + prixCourant +
